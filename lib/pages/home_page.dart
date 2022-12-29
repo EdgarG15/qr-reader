@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 import 'package:qr_reader/pages/direcciones_page.dart';
 import 'package:qr_reader/pages/mapas_page.dart';
 
+import '../providers/ui_provider.dart';
 import '../widgets/custom_navigator_bar.dart';
 import '../widgets/scan_buttom.dart';
 
@@ -31,15 +33,17 @@ class _body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final currentIndex = 0;
+    final uiProvider = Provider.of<UiProvider>(context);
+
+    final currentIndex = uiProvider.selectedMenuOpt;
 
     switch (currentIndex) {
       case 0:
-        return MapasPage();
+        return const MapasPage();
       case 1:
-        return DireccionesPage();
+        return const DireccionesPage();
       default:
-        return MapasPage();
+        return const MapasPage();
     }
   }
 }
