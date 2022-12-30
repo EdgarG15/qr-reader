@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 
@@ -15,7 +16,9 @@ class ScanButtom extends StatelessWidget {
           false,
           ScanMode.QR,
         );
-        print(barcodeScanRes);
+        if (kDebugMode) {
+          print(barcodeScanRes);
+        }
       },
       child: const Icon(Icons.filter_center_focus),
     );
