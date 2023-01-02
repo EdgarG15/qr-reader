@@ -28,6 +28,7 @@ class HomePage extends StatelessWidget {
   }
 }
 
+// ignore: camel_case_types
 class _body extends StatelessWidget {
   const _body({Key? key}) : super(key: key);
 
