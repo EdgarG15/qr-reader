@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:qr_reader/models/scan_model.dart';
 import 'package:qr_reader/pages/direcciones_page.dart';
 import 'package:qr_reader/pages/mapas_page.dart';
+import 'package:qr_reader/providers/db_provider.dart';
 
 import '../providers/ui_provider.dart';
 import '../widgets/custom_navigator_bar.dart';
@@ -37,6 +39,8 @@ class _body extends StatelessWidget {
     final uiProvider = Provider.of<UiProvider>(context);
 
     final currentIndex = uiProvider.selectedMenuOpt;
+    final tempScan = new ScanModel(valor: 'http://google.com');
+    DBProvider.db.getScanById(1);
 
     switch (currentIndex) {
       case 0:
