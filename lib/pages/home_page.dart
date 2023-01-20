@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:qr_reader/models/scan_model.dart';
 import 'package:qr_reader/pages/direcciones_page.dart';
 import 'package:qr_reader/pages/mapas_page.dart';
 import 'package:qr_reader/providers/db_provider.dart';
@@ -41,13 +40,15 @@ class _body extends StatelessWidget {
 
     final currentIndex = uiProvider.selectedMenuOpt;
     final scanListProvider = Provider.of<ScanListProvider>(context);
-    final tempScan = new ScanModel(valor: 'http://google.com');
+    final tempScan = ScanModel(valor: 'http://google.com');
     DBProvider.db.getScanById(1);
 
     switch (currentIndex) {
       case 0:
+        scanListProvider.cargarScanPorTipo('geo');
         return const MapasPage();
       case 1:
+        scanListProvider.cargarScanPorTipo('http');
         return const DireccionesPage();
       default:
         return const MapasPage();
