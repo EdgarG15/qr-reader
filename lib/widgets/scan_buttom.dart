@@ -16,7 +16,7 @@ class ScanButtom extends StatelessWidget {
         //   false,
         //   ScanMode.QR,
         // );
-        final barcodeScanRes = 'https://fernando-herrera.com';
+        const barcodeScanRes = 'https://fernando-herrera.com';
         final scanListProvider =
             Provider.of<ScanListProvider>(context, listen: false);
         final nuevoScan = await scanListProvider.nuevoScan(barcodeScanRes);
