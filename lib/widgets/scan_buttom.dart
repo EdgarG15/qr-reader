@@ -20,7 +20,7 @@ class ScanButtom extends StatelessWidget {
         final scanListProvider =
             Provider.of<ScanListProvider>(context, listen: false);
         final nuevoScan = await scanListProvider.nuevoScan(barcodeScanRes);
-        //scanListProvider.nuevoScan('geo:15.33,15.66');
+        scanListProvider.nuevoScan('geo:15.33,15.66');
       },
       child: const Icon(Icons.filter_center_focus),
     );
